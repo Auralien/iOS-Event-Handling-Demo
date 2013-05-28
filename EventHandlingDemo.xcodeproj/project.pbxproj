@@ -1,0 +1,306 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8BF7F1421754820E005ADD36 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BF7F1411754820E005ADD36 /* UIKit.framework */; };
+		8BF7F1441754820E005ADD36 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BF7F1431754820E005ADD36 /* Foundation.framework */; };
+		8BF7F1461754820E005ADD36 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BF7F1451754820E005ADD36 /* CoreGraphics.framework */; };
+		8BF7F14C1754820E005ADD36 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8BF7F14A1754820E005ADD36 /* InfoPlist.strings */; };
+		8BF7F14E1754820E005ADD36 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BF7F14D1754820E005ADD36 /* main.m */; };
+		8BF7F1521754820E005ADD36 /* EHDAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BF7F1511754820E005ADD36 /* EHDAppDelegate.m */; };
+		8BF7F1541754820E005ADD36 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BF7F1531754820E005ADD36 /* Default.png */; };
+		8BF7F1561754820E005ADD36 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BF7F1551754820E005ADD36 /* Default@2x.png */; };
+		8BF7F1581754820E005ADD36 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BF7F1571754820E005ADD36 /* Default-568h@2x.png */; };
+		8BF7F15B1754820E005ADD36 /* EHDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BF7F15A1754820E005ADD36 /* EHDViewController.m */; };
+		8BF7F15E1754820E005ADD36 /* EHDViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8BF7F15C1754820E005ADD36 /* EHDViewController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		8BF7F13E1754820E005ADD36 /* EventHandlingDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EventHandlingDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8BF7F1411754820E005ADD36 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		8BF7F1431754820E005ADD36 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		8BF7F1451754820E005ADD36 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		8BF7F1491754820E005ADD36 /* EventHandlingDemo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "EventHandlingDemo-Info.plist"; sourceTree = "<group>"; };
+		8BF7F14B1754820E005ADD36 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		8BF7F14D1754820E005ADD36 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		8BF7F14F1754820E005ADD36 /* EventHandlingDemo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EventHandlingDemo-Prefix.pch"; sourceTree = "<group>"; };
+		8BF7F1501754820E005ADD36 /* EHDAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EHDAppDelegate.h; sourceTree = "<group>"; };
+		8BF7F1511754820E005ADD36 /* EHDAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EHDAppDelegate.m; sourceTree = "<group>"; };
+		8BF7F1531754820E005ADD36 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		8BF7F1551754820E005ADD36 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		8BF7F1571754820E005ADD36 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		8BF7F1591754820E005ADD36 /* EHDViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EHDViewController.h; sourceTree = "<group>"; };
+		8BF7F15A1754820E005ADD36 /* EHDViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EHDViewController.m; sourceTree = "<group>"; };
+		8BF7F15D1754820E005ADD36 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/EHDViewController.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8BF7F13B1754820E005ADD36 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8BF7F1421754820E005ADD36 /* UIKit.framework in Frameworks */,
+				8BF7F1441754820E005ADD36 /* Foundation.framework in Frameworks */,
+				8BF7F1461754820E005ADD36 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8BF7F1351754820E005ADD36 = {
+			isa = PBXGroup;
+			children = (
+				8BF7F1471754820E005ADD36 /* EventHandlingDemo */,
+				8BF7F1401754820E005ADD36 /* Frameworks */,
+				8BF7F13F1754820E005ADD36 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8BF7F13F1754820E005ADD36 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8BF7F13E1754820E005ADD36 /* EventHandlingDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8BF7F1401754820E005ADD36 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8BF7F1411754820E005ADD36 /* UIKit.framework */,
+				8BF7F1431754820E005ADD36 /* Foundation.framework */,
+				8BF7F1451754820E005ADD36 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8BF7F1471754820E005ADD36 /* EventHandlingDemo */ = {
+			isa = PBXGroup;
+			children = (
+				8BF7F1501754820E005ADD36 /* EHDAppDelegate.h */,
+				8BF7F1511754820E005ADD36 /* EHDAppDelegate.m */,
+				8BF7F1591754820E005ADD36 /* EHDViewController.h */,
+				8BF7F15A1754820E005ADD36 /* EHDViewController.m */,
+				8BF7F15C1754820E005ADD36 /* EHDViewController.xib */,
+				8BF7F1481754820E005ADD36 /* Supporting Files */,
+			);
+			path = EventHandlingDemo;
+			sourceTree = "<group>";
+		};
+		8BF7F1481754820E005ADD36 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8BF7F1491754820E005ADD36 /* EventHandlingDemo-Info.plist */,
+				8BF7F14A1754820E005ADD36 /* InfoPlist.strings */,
+				8BF7F14D1754820E005ADD36 /* main.m */,
+				8BF7F14F1754820E005ADD36 /* EventHandlingDemo-Prefix.pch */,
+				8BF7F1531754820E005ADD36 /* Default.png */,
+				8BF7F1551754820E005ADD36 /* Default@2x.png */,
+				8BF7F1571754820E005ADD36 /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8BF7F13D1754820E005ADD36 /* EventHandlingDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8BF7F1611754820E005ADD36 /* Build configuration list for PBXNativeTarget "EventHandlingDemo" */;
+			buildPhases = (
+				8BF7F13A1754820E005ADD36 /* Sources */,
+				8BF7F13B1754820E005ADD36 /* Frameworks */,
+				8BF7F13C1754820E005ADD36 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = EventHandlingDemo;
+			productName = EventHandlingDemo;
+			productReference = 8BF7F13E1754820E005ADD36 /* EventHandlingDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8BF7F1361754820E005ADD36 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = EHD;
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = "Maxim Mikheev";
+			};
+			buildConfigurationList = 8BF7F1391754820E005ADD36 /* Build configuration list for PBXProject "EventHandlingDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 8BF7F1351754820E005ADD36;
+			productRefGroup = 8BF7F13F1754820E005ADD36 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8BF7F13D1754820E005ADD36 /* EventHandlingDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8BF7F13C1754820E005ADD36 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8BF7F14C1754820E005ADD36 /* InfoPlist.strings in Resources */,
+				8BF7F1541754820E005ADD36 /* Default.png in Resources */,
+				8BF7F1561754820E005ADD36 /* Default@2x.png in Resources */,
+				8BF7F1581754820E005ADD36 /* Default-568h@2x.png in Resources */,
+				8BF7F15E1754820E005ADD36 /* EHDViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8BF7F13A1754820E005ADD36 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8BF7F14E1754820E005ADD36 /* main.m in Sources */,
+				8BF7F1521754820E005ADD36 /* EHDAppDelegate.m in Sources */,
+				8BF7F15B1754820E005ADD36 /* EHDViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		8BF7F14A1754820E005ADD36 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8BF7F14B1754820E005ADD36 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		8BF7F15C1754820E005ADD36 /* EHDViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8BF7F15D1754820E005ADD36 /* en */,
+			);
+			name = EHDViewController.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8BF7F15F1754820E005ADD36 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		8BF7F1601754820E005ADD36 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8BF7F1621754820E005ADD36 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "EventHandlingDemo/EventHandlingDemo-Prefix.pch";
+				INFOPLIST_FILE = "EventHandlingDemo/EventHandlingDemo-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		8BF7F1631754820E005ADD36 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "EventHandlingDemo/EventHandlingDemo-Prefix.pch";
+				INFOPLIST_FILE = "EventHandlingDemo/EventHandlingDemo-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8BF7F1391754820E005ADD36 /* Build configuration list for PBXProject "EventHandlingDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8BF7F15F1754820E005ADD36 /* Debug */,
+				8BF7F1601754820E005ADD36 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8BF7F1611754820E005ADD36 /* Build configuration list for PBXNativeTarget "EventHandlingDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8BF7F1621754820E005ADD36 /* Debug */,
+				8BF7F1631754820E005ADD36 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8BF7F1361754820E005ADD36 /* Project object */;
+}
