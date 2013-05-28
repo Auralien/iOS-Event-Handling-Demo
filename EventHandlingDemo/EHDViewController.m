@@ -22,6 +22,7 @@ CGFloat const cardHeight = 287.0;
 @property (nonatomic, weak) IBOutlet UIImageView *center;
 @property (nonatomic, strong) NSMutableArray *images;
 @property (nonatomic, weak) IBOutlet UIImageView *backgroundOpen;
+@property (nonatomic, strong) UIImageView *cardToDelete;
 
 @end
 
@@ -33,6 +34,8 @@ CGFloat const cardHeight = 287.0;
         [self animationStep1Rotation];
     }
 }
+
+#pragma mark - Animation Methods
 
 /// Method animates first Pi rotation
 - (void)animationStep1Rotation {
@@ -93,6 +96,12 @@ CGFloat const cardHeight = 287.0;
                                                         self.center.frame.size.width,
                                                         self.center.frame.size.height);
                          self.center.layer.opacity = 0.0;
+                         
+                         /// Button Slide
+                         self.startAnimationButton.frame = CGRectMake(self.startAnimationButton.frame.origin.x + barsSlideDelta,
+                                                                      self.startAnimationButton.frame.origin.y,
+                                                                      self.startAnimationButton.frame.size.width,
+                                                                      self.startAnimationButton.frame.size.height);
                      }
                      completion:^(BOOL finished){
                          NSLog(@"Slide Finished");
@@ -110,6 +119,7 @@ CGFloat const cardHeight = 287.0;
         imageView.frame = CGRectMake(self.view.center.x, yStart, cardWidth, cardHeight);
         imageView.userInteractionEnabled = YES;
         
+        /// Adding gestures support for cards
         UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];
         tap.delegate = self;
         [imageView addGestureRecognizer:tap];
@@ -121,6 +131,10 @@ CGFloat const cardHeight = 287.0;
         UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(handleLongPress:)];
         longPress.delegate = self;
         [imageView addGestureRecognizer:longPress];
+        
+        UIRotationGestureRecognizer *rotation = [[UIRotationGestureRecognizer alloc] initWithTarget:self action:@selector(handleRotation:)];
+        rotation.delegate = self;
+        [imageView addGestureRecognizer:rotation];
         
         [self.view insertSubview:imageView belowSubview:self.left];
         [self.images addObject:imageView];
@@ -152,7 +166,9 @@ CGFloat const cardHeight = 287.0;
     }
 }
 
-/// Method removes card from screen and from cards array by user tap
+#pragma mark - Gesture Recognizers
+
+/// Method brings card to front by user tap
 - (void)handleTap:(UITapGestureRecognizer *)tapGestureRecognizer {
     UIImageView *imageView = (UIImageView *)[tapGestureRecognizer view];
     [UIView animateWithDuration:0.3
@@ -172,7 +188,7 @@ CGFloat const cardHeight = 287.0;
                      }];
 }
 
-/// Method changes card's position
+/// Method moves card by user's drag
 - (void)handlePan:(UIPanGestureRecognizer *)panGestureRecognizer {
     UIView *piece = [panGestureRecognizer view];
     
@@ -193,9 +209,61 @@ CGFloat const cardHeight = 287.0;
     }
 }
 
-/// Method removes card by long press
+/// Method shows menu by long press
 - (void)handleLongPress:(UILongPressGestureRecognizer *)longPressGestureRecognizer {
-    UIImageView *imageView = (UIImageView *)[longPressGestureRecognizer view];
+    if ([longPressGestureRecognizer state] == UIGestureRecognizerStateBegan) {
+        self.cardToDelete = (UIImageView *)[longPressGestureRecognizer view];
+        [self.cardToDelete becomeFirstResponder];   // seems to be not really necessary
+        
+        NSString *deleteMenuItemTitle = NSLocalizedString(@"Delete", @"Delete menu item title");
+        UIMenuItem *deleteMenuItem = [[UIMenuItem alloc] initWithTitle:deleteMenuItemTitle action:@selector(deleteCard:)];
+        
+        NSString *addCardsMenuItemTitle = NSLocalizedString(@"Add Cards", @"Add more cards menu item title");
+        UIMenuItem *addCardsMenuItem = [[UIMenuItem alloc] initWithTitle:addCardsMenuItemTitle action:@selector(addMoreCards:)];
+        
+        UIMenuController *menuController = [UIMenuController sharedMenuController];
+        [menuController setMenuItems:@[deleteMenuItem, addCardsMenuItem]];
+        
+        CGPoint location = [longPressGestureRecognizer locationInView:self.cardToDelete];
+        CGRect menuLocation = CGRectMake(location.x, location.y, 0, 0);
+        [menuController setTargetRect:menuLocation inView:self.cardToDelete];
+        [menuController setMenuVisible:YES animated:YES];
+    }
+}
+
+/// Method rotates card
+- (void)handleRotation:(UIRotationGestureRecognizer *)rotationGestureRecognizer {
+    UIImageView *imageView = (UIImageView *)[rotationGestureRecognizer view];
+    
+    if ([rotationGestureRecognizer state] == UIGestureRecognizerStateBegan ||
+        [rotationGestureRecognizer state] == UIGestureRecognizerStateChanged) {
+        imageView.transform = CGAffineTransformRotate([[rotationGestureRecognizer view] transform], [rotationGestureRecognizer rotation]);
+        [rotationGestureRecognizer setRotation:0];
+    }
+}
+
+/// Method restricts simultanious recognitions on different views
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
+    
+    // If the gesture recognizers are on different views, don't allow simultaneous recognition.
+    if (gestureRecognizer.view != otherGestureRecognizer.view) {
+        return NO;
+    }
+    
+    // If either of the gesture recognizers is the long press, don't allow simultaneous recognition.
+    if ([gestureRecognizer isKindOfClass:[UILongPressGestureRecognizer class]] || [otherGestureRecognizer isKindOfClass:[UILongPressGestureRecognizer class]]) {
+        return NO;
+    }
+    
+    return YES;
+}
+
+#pragma mark - Menu Actions Methods
+
+/// Method for card delete
+- (void)deleteCard:(UIMenuController *)controller {
+    UIImageView *imageView = self.cardToDelete;
+    
     [UIView animateWithDuration:0.3
                           delay:0
                         options:UIViewAnimationOptionCurveEaseInOut
@@ -206,6 +274,19 @@ CGFloat const cardHeight = 287.0;
                          [self.images removeObject:imageView];
                      }];
 }
+
+/// Method for adding more cards
+- (void)addMoreCards:(UIMenuController *)controller {
+    [self animationStep4Cards];
+}
+
+#pragma mark - Support Methods
+
+// UIMenuController from handleLongPress: requires that we can become first responder or it won't display
+- (BOOL)canBecomeFirstResponder {
+    return YES;
+}
+
 
 /// Method resets graphic elements depending on screen's size (needed for iPhone 5)
 - (void)prepareGraphics {
