@@ -18,6 +18,20 @@
 		8BF7F1581754820E005ADD36 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BF7F1571754820E005ADD36 /* Default-568h@2x.png */; };
 		8BF7F15B1754820E005ADD36 /* EHDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BF7F15A1754820E005ADD36 /* EHDViewController.m */; };
 		8BF7F15E1754820E005ADD36 /* EHDViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8BF7F15C1754820E005ADD36 /* EHDViewController.xib */; };
+		8BF7F1651754821B005ADD36 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BF7F1641754821B005ADD36 /* QuartzCore.framework */; };
+		8BF7F17317548298005ADD36 /* card01.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BF7F16617548298005ADD36 /* card01.png */; };
+		8BF7F17417548298005ADD36 /* card02.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BF7F16717548298005ADD36 /* card02.png */; };
+		8BF7F17517548298005ADD36 /* card03.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BF7F16817548298005ADD36 /* card03.png */; };
+		8BF7F17617548298005ADD36 /* card04.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BF7F16917548298005ADD36 /* card04.png */; };
+		8BF7F17717548298005ADD36 /* card05.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BF7F16A17548298005ADD36 /* card05.png */; };
+		8BF7F17817548298005ADD36 /* card06.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BF7F16B17548298005ADD36 /* card06.png */; };
+		8BF7F17917548298005ADD36 /* card07.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BF7F16C17548298005ADD36 /* card07.png */; };
+		8BF7F17A17548298005ADD36 /* card08.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BF7F16D17548298005ADD36 /* card08.png */; };
+		8BF7F17B17548298005ADD36 /* card09.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BF7F16E17548298005ADD36 /* card09.png */; };
+		8BF7F17C17548298005ADD36 /* HearthstoneCenter.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BF7F16F17548298005ADD36 /* HearthstoneCenter.png */; };
+		8BF7F17D17548298005ADD36 /* HearthstoneLeft.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BF7F17017548298005ADD36 /* HearthstoneLeft.png */; };
+		8BF7F17E17548298005ADD36 /* HearthstoneRight.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BF7F17117548298005ADD36 /* HearthstoneRight.png */; };
+		8BF7F17F17548298005ADD36 /* BackgroundOpen.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BF7F17217548298005ADD36 /* BackgroundOpen.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +51,20 @@
 		8BF7F1591754820E005ADD36 /* EHDViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EHDViewController.h; sourceTree = "<group>"; };
 		8BF7F15A1754820E005ADD36 /* EHDViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EHDViewController.m; sourceTree = "<group>"; };
 		8BF7F15D1754820E005ADD36 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/EHDViewController.xib; sourceTree = "<group>"; };
+		8BF7F1641754821B005ADD36 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		8BF7F16617548298005ADD36 /* card01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = card01.png; sourceTree = "<group>"; };
+		8BF7F16717548298005ADD36 /* card02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = card02.png; sourceTree = "<group>"; };
+		8BF7F16817548298005ADD36 /* card03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = card03.png; sourceTree = "<group>"; };
+		8BF7F16917548298005ADD36 /* card04.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = card04.png; sourceTree = "<group>"; };
+		8BF7F16A17548298005ADD36 /* card05.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = card05.png; sourceTree = "<group>"; };
+		8BF7F16B17548298005ADD36 /* card06.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = card06.png; sourceTree = "<group>"; };
+		8BF7F16C17548298005ADD36 /* card07.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = card07.png; sourceTree = "<group>"; };
+		8BF7F16D17548298005ADD36 /* card08.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = card08.png; sourceTree = "<group>"; };
+		8BF7F16E17548298005ADD36 /* card09.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = card09.png; sourceTree = "<group>"; };
+		8BF7F16F17548298005ADD36 /* HearthstoneCenter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HearthstoneCenter.png; sourceTree = "<group>"; };
+		8BF7F17017548298005ADD36 /* HearthstoneLeft.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HearthstoneLeft.png; sourceTree = "<group>"; };
+		8BF7F17117548298005ADD36 /* HearthstoneRight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HearthstoneRight.png; sourceTree = "<group>"; };
+		8BF7F17217548298005ADD36 /* BackgroundOpen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BackgroundOpen.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8BF7F1651754821B005ADD36 /* QuartzCore.framework in Frameworks */,
 				8BF7F1421754820E005ADD36 /* UIKit.framework in Frameworks */,
 				8BF7F1441754820E005ADD36 /* Foundation.framework in Frameworks */,
 				8BF7F1461754820E005ADD36 /* CoreGraphics.framework in Frameworks */,
@@ -73,6 +102,7 @@
 		8BF7F1401754820E005ADD36 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8BF7F1641754821B005ADD36 /* QuartzCore.framework */,
 				8BF7F1411754820E005ADD36 /* UIKit.framework */,
 				8BF7F1431754820E005ADD36 /* Foundation.framework */,
 				8BF7F1451754820E005ADD36 /* CoreGraphics.framework */,
@@ -96,6 +126,19 @@
 		8BF7F1481754820E005ADD36 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				8BF7F16617548298005ADD36 /* card01.png */,
+				8BF7F16717548298005ADD36 /* card02.png */,
+				8BF7F16817548298005ADD36 /* card03.png */,
+				8BF7F16917548298005ADD36 /* card04.png */,
+				8BF7F16A17548298005ADD36 /* card05.png */,
+				8BF7F16B17548298005ADD36 /* card06.png */,
+				8BF7F16C17548298005ADD36 /* card07.png */,
+				8BF7F16D17548298005ADD36 /* card08.png */,
+				8BF7F16E17548298005ADD36 /* card09.png */,
+				8BF7F16F17548298005ADD36 /* HearthstoneCenter.png */,
+				8BF7F17017548298005ADD36 /* HearthstoneLeft.png */,
+				8BF7F17117548298005ADD36 /* HearthstoneRight.png */,
+				8BF7F17217548298005ADD36 /* BackgroundOpen.png */,
 				8BF7F1491754820E005ADD36 /* EventHandlingDemo-Info.plist */,
 				8BF7F14A1754820E005ADD36 /* InfoPlist.strings */,
 				8BF7F14D1754820E005ADD36 /* main.m */,
@@ -164,6 +207,19 @@
 				8BF7F1561754820E005ADD36 /* Default@2x.png in Resources */,
 				8BF7F1581754820E005ADD36 /* Default-568h@2x.png in Resources */,
 				8BF7F15E1754820E005ADD36 /* EHDViewController.xib in Resources */,
+				8BF7F17317548298005ADD36 /* card01.png in Resources */,
+				8BF7F17417548298005ADD36 /* card02.png in Resources */,
+				8BF7F17517548298005ADD36 /* card03.png in Resources */,
+				8BF7F17617548298005ADD36 /* card04.png in Resources */,
+				8BF7F17717548298005ADD36 /* card05.png in Resources */,
+				8BF7F17817548298005ADD36 /* card06.png in Resources */,
+				8BF7F17917548298005ADD36 /* card07.png in Resources */,
+				8BF7F17A17548298005ADD36 /* card08.png in Resources */,
+				8BF7F17B17548298005ADD36 /* card09.png in Resources */,
+				8BF7F17C17548298005ADD36 /* HearthstoneCenter.png in Resources */,
+				8BF7F17D17548298005ADD36 /* HearthstoneLeft.png in Resources */,
+				8BF7F17E17548298005ADD36 /* HearthstoneRight.png in Resources */,
+				8BF7F17F17548298005ADD36 /* BackgroundOpen.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,6 +320,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "EventHandlingDemo/EventHandlingDemo-Prefix.pch";
 				INFOPLIST_FILE = "EventHandlingDemo/EventHandlingDemo-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -275,6 +332,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "EventHandlingDemo/EventHandlingDemo-Prefix.pch";
 				INFOPLIST_FILE = "EventHandlingDemo/EventHandlingDemo-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

@@ -2,7 +2,7 @@
 //  EHDAppDelegate.h
 //  EventHandlingDemo
 //
-//  Created by Apple Developer on 28.05.13.
+//  Created by Maxim Mikheev on 28.05.13.
 //  Copyright (c) 2013 Maxim Mikheev. All rights reserved.
 //
 
