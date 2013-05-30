@@ -15,6 +15,7 @@ CGFloat const cardHeight = 287.0;
 @interface EHDViewController ()
 
 @property (nonatomic) BOOL boxIsClosed;
+@property (nonatomic) BOOL cardsOnScreen;
 
 @property (nonatomic, weak) IBOutlet UIButton *startAnimationButton;
 @property (nonatomic, weak) IBOutlet UIImageView *left;
@@ -39,7 +40,7 @@ CGFloat const cardHeight = 287.0;
 
 /// Method animates first Pi rotation
 - (void)animationStep1Rotation {
-    [UIView animateWithDuration:1.5
+    [UIView animateWithDuration:1
                           delay:0
                         options:UIViewAnimationOptionCurveEaseIn
                      animations:^{
@@ -53,7 +54,7 @@ CGFloat const cardHeight = 287.0;
 
 /// Method animates second Pi rotation
 - (void)animationStep2Rotation {
-    [UIView animateWithDuration:1.5
+    [UIView animateWithDuration:1
                           delay:0
                         options:UIViewAnimationOptionCurveEaseOut
                      animations:^{
@@ -113,7 +114,7 @@ CGFloat const cardHeight = 287.0;
 
 /// Method animates cards appearance
 - (void)animationStep4Cards {
-    for (NSInteger i = 8; i >= 0; i--) {
+    for (NSInteger i = 9; i > 0; i--) {
         UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[NSString stringWithFormat:@"card0%d.png", i]]];
         NSInteger yStart = (i % 2 == 0) ? self.view.frame.size.height + 10 : - cardHeight - 10;
         imageView.frame = CGRectMake(self.view.center.x, yStart, cardWidth, cardHeight);
@@ -139,8 +140,8 @@ CGFloat const cardHeight = 287.0;
         [self.view insertSubview:imageView belowSubview:self.left];
         [self.images addObject:imageView];
         
-        [UIView animateWithDuration:1
-                              delay:(double)(8 - i)
+        [UIView animateWithDuration:0.33
+                              delay:(double)(9 - i) * 0.5
                             options:UIViewAnimationOptionCurveEaseInOut
                          animations:^{
                              CGFloat viewWidth, viewHeight;
@@ -157,12 +158,16 @@ CGFloat const cardHeight = 287.0;
                                                       imageView.frame.size.width,
                                                       imageView.frame.size.height);
                              imageView.frame = rect;
+                             //NSLog(@"Brand new frame = %@", [NSValue valueWithCGRect:imageView.frame]);
                              
                              CGFloat angle = - 0.1 + (double)arc4random()/RAND_MAX * 0.1;
-                             NSLog(@"Card rotation angle = %f", angle);
-                             imageView.transform = CGAffineTransformMakeRotation(angle);
+                             //NSLog(@"Card rotation angle = %f", angle);
+                             imageView.transform = CGAffineTransformRotate(imageView.transform, angle);
+                             // imageView.transform = CGAffineTransformMakeRotation(angle);
                          }
-                         completion:nil];
+                         completion:^(BOOL finished) {
+                             [self cardsOnScreenStatusUpdate];
+                         }];
     }
 }
 
@@ -184,6 +189,7 @@ CGFloat const cardHeight = 287.0;
                      completion:^(BOOL finished){
                          if ([tapGestureRecognizer numberOfTouches] == 2) {
                              [self.images removeObject:imageView];
+                             [self cardsOnScreenStatusUpdate];
                          }
                      }];
 }
@@ -258,6 +264,19 @@ CGFloat const cardHeight = 287.0;
     return YES;
 }
 
+/// Method handles shake-motion effect
+- (void)motionBegan:(UIEventSubtype)motion withEvent:(UIEvent *)event {
+    if (motion == UIEventSubtypeMotionShake && self.cardsOnScreen) {
+        [self shuffleCardsFast];
+    }
+}
+
+- (void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event {
+    if (motion == UIEventSubtypeMotionShake && self.cardsOnScreen) {
+        [self shuffleCardsSlow];
+    }
+}
+
 #pragma mark - Menu Actions Methods
 
 /// Method for card delete
@@ -272,6 +291,7 @@ CGFloat const cardHeight = 287.0;
                      }
                      completion:^(BOOL finished){
                          [self.images removeObject:imageView];
+                         [self cardsOnScreenStatusUpdate];
                      }];
 }
 
@@ -283,6 +303,7 @@ CGFloat const cardHeight = 287.0;
 #pragma mark - Support Methods
 
 // UIMenuController from handleLongPress: requires that we can become first responder or it won't display
+// Also needed for detecting shaking motion
 - (BOOL)canBecomeFirstResponder {
     return YES;
 }
@@ -333,12 +354,56 @@ CGFloat const cardHeight = 287.0;
     self.backgroundOpen.frame = self.view.frame;
 }
 
+/// Method checks if there are cards on screen now
+- (void)cardsOnScreenStatusUpdate {
+    if ([self.images count] > 0) {
+        self.cardsOnScreen = YES;
+    } else {
+        self.cardsOnScreen = NO;
+    }
+}
+
+/// Shuffle cards on screen
+- (void)shuffleCardsFast {
+    [UIView animateWithDuration:0.05 animations:^{
+        for (UIImageView *imageView in self.images) {
+            imageView.center = CGPointMake(imageView.center.x + arc4random() % 80 - 40,
+                                           imageView.center.y + arc4random() % 80 - 40);
+            
+            CGFloat angle = - 0.5 + (double)arc4random()/RAND_MAX * 0.5;
+            NSLog(@"Card rotation angle = %f", angle);
+            imageView.transform = CGAffineTransformRotate(imageView.transform, angle);
+        }
+    }];
+}
+
+/// Shuffle cards on screen
+- (void)shuffleCardsSlow {
+    [UIView animateWithDuration:0.25 animations:^{
+        for (UIImageView *imageView in self.images) {
+            imageView.center = CGPointMake(imageView.center.x + arc4random() % 40 - 20,
+                                           imageView.center.y + arc4random() % 40 - 20);
+            
+            CGFloat angle = - 0.3 + (double)arc4random()/RAND_MAX * 0.3;
+            NSLog(@"Card rotation angle = %f", angle);
+            imageView.transform = CGAffineTransformRotate(imageView.transform, angle);
+        }
+    }];
+}
+
+#pragma mark - View Lifecycle Methods
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self prepareGraphics];
     
     self.boxIsClosed = YES;
     self.images = [NSMutableArray array];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [self becomeFirstResponder]; // Needed for handling shaking effect
 }
 
 @end
